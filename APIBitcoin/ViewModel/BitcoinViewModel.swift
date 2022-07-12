@@ -7,7 +7,7 @@
 
 import Foundation
 class BitcoinViewModel{
-    var bitcoins = [String: Rate]()
+    var bitcoins = [Rate]()
     
     let URL_API: String = "https://api.coingecko.com/api/v3/exchange_rates"
     
@@ -20,7 +20,7 @@ class BitcoinViewModel{
                 DispatchQueue.main.async(execute: {
                     decoder.rates.forEach{ bitcoin in
                         print(bitcoin)
-                        self.bitcoins[bitcoin.key] = bitcoin.value
+                        self.bitcoins.append(bitcoin.value)
                     }
                 })
             }
