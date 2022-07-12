@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nPp-b4-csI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="250" width="414" height="486"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="SKW-vH-3Nm">
@@ -30,26 +30,44 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="VQ1-hQ-Ly5">
+                                <rect key="frame" x="0.0" y="50" width="414" height="200"/>
+                            </imageView>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Buscar moneda" translatesAutoresizingMaskIntoConstraints="NO" id="peu-d8-fCH">
+                                <rect key="frame" x="0.0" y="30" width="414" height="51"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="peu-d8-fCH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6Ok-ZU-czQ"/>
+                            <constraint firstItem="nPp-b4-csI" firstAttribute="top" secondItem="VQ1-hQ-Ly5" secondAttribute="bottom" id="96L-xE-6hw"/>
+                            <constraint firstItem="VQ1-hQ-Ly5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="9VX-ed-i8c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nPp-b4-csI" secondAttribute="trailing" id="Dux-84-PeL"/>
                             <constraint firstItem="nPp-b4-csI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EXz-h2-lsT"/>
-                            <constraint firstItem="nPp-b4-csI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jhc-Ec-8Ta"/>
+                            <constraint firstItem="peu-d8-fCH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="cwW-O4-wlO"/>
+                            <constraint firstItem="nPp-b4-csI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="jhc-Ec-8Ta"/>
+                            <constraint firstItem="peu-d8-fCH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kuJ-BI-6rf"/>
+                            <constraint firstItem="VQ1-hQ-Ly5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oNB-t8-Kvk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nPp-b4-csI" secondAttribute="bottom" id="rsB-et-mxv"/>
+                            <constraint firstItem="VQ1-hQ-Ly5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yBP-OC-evr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="peu-d8-fCH" id="TMp-NP-44F"/>
                         <outlet property="tableView" destination="nPp-b4-csI" id="5Rm-sC-31S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="46"/>
+            <point key="canvasLocation" x="128.98550724637681" y="45.652173913043484"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bitcoin" width="885" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
